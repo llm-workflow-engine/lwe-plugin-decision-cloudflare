@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lwe-plugin-decision-cloudflare"
+version = "0.1.0"
+description = "Cloudflare Clef decision provider for LWE"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["llm-workflow-engine>=0.23", "httpx>=0.28"]
+
+[project.entry-points."lwe_decision_providers"]
+cloudflare = "lwe_plugin_decision_cloudflare:CloudflareDecisionProvider"
+
+[tool.setuptools.packages.find]
+include = ["lwe_plugin_decision_cloudflare*"]
